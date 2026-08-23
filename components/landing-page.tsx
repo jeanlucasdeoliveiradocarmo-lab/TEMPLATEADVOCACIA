@@ -73,16 +73,16 @@ export function LandingPage() {
             </div>
 
             <MotionReveal direction="right" className="relative lg:pl-4">
-              <div className="relative overflow-hidden rounded-[2.25rem] border border-white bg-white p-6 text-[var(--brand-dark)] shadow-soft sm:p-8 lg:p-10">
-                <div className="absolute right-0 top-0 h-40 w-40 rounded-bl-[7rem] border-b border-l border-slate-200 bg-slate-50" />
-                <div className="flex items-center justify-between border-b border-slate-200 pb-6">
-                  <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--brand-dark)]">{siteConfig.labels.heroCardEyebrow}</p><p className="mt-2 text-sm text-slate-600">{siteConfig.labels.heroCardDescription}</p></div>
-                  <div className="grid size-12 place-items-center rounded-full border border-[var(--brand-dark)] bg-[var(--brand-dark)]"><Scale className="size-5 text-white" aria-hidden="true" /></div>
+              <div className="relative isolate overflow-hidden rounded-[2.25rem] border border-white bg-white p-6 text-[var(--brand-dark)] shadow-soft sm:p-8 lg:p-10">
+                <div className="pointer-events-none absolute right-0 top-0 z-0 h-40 w-40 rounded-bl-[7rem] border-b border-l border-slate-200 bg-slate-50" />
+                <div className="relative z-10 flex items-center justify-between gap-3 border-b border-slate-200 pb-6">
+                  <div className="min-w-0"><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--brand-dark)] sm:text-xs sm:tracking-[0.2em]">{siteConfig.labels.heroCardEyebrow}</p><p className="mt-2 text-sm text-slate-600">{siteConfig.labels.heroCardDescription}</p></div>
+                  <div className="grid size-12 shrink-0 place-items-center rounded-full border border-[var(--brand-dark)] bg-[var(--brand-dark)]"><Scale className="size-5 text-white" aria-hidden="true" /></div>
                 </div>
-                <div className="space-y-5 py-7">
+                <div className="relative z-10 space-y-5 py-7">
                   {siteConfig.hero.highlights.map((item) => <div key={item} className="flex items-start gap-4"><span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-amber-300 text-slate-950"><Check className="size-3.5" strokeWidth={3} aria-hidden="true" /></span><p className="font-medium leading-6 text-[var(--brand-dark)]">{item}</p></div>)}
                 </div>
-                <a href={whatsapp} target="_blank" rel="noreferrer" className="group flex items-center justify-between rounded-2xl bg-[var(--brand-dark)] p-4 font-bold text-white transition hover:bg-[var(--brand-primary)] focus-ring">{siteConfig.labels.heroCardCta}<span className="grid size-10 place-items-center rounded-full bg-white text-[var(--brand-dark)] transition group-hover:translate-x-1"><ArrowUpRight className="size-4" aria-hidden="true" /></span></a>
+                <a href={whatsapp} target="_blank" rel="noreferrer" className="group relative z-10 flex items-center justify-between rounded-2xl bg-[var(--brand-dark)] p-4 font-bold text-white transition hover:bg-[var(--brand-primary)] focus-ring">{siteConfig.labels.heroCardCta}<span className="grid size-10 place-items-center rounded-full bg-white text-[var(--brand-dark)] transition group-hover:translate-x-1"><ArrowUpRight className="size-4" aria-hidden="true" /></span></a>
               </div>
               <div className="relative z-10 mx-4 -mt-5 grid grid-cols-3 overflow-hidden rounded-2xl border border-white/15 bg-[var(--brand-dark)] shadow-soft sm:mx-8">
                 {siteConfig.hero.metrics.map((metric, index) => <div key={metric.label} className={cn("px-3 py-4 text-center", index ? "border-l border-white/15" : "")}><p className="text-xl font-extrabold text-white sm:text-2xl">{metric.value}</p><p className="mt-1 text-[10px] font-semibold leading-4 text-slate-300 sm:text-xs">{metric.label}</p></div>)}
